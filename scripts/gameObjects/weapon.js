@@ -6,14 +6,14 @@ class Weapon extends BaseGameObject {
     xVelocity = 0;
     yVelocity = 0;
     useGravityForces = false;
-    active = true;
-    /*weaponTimeOut = 2000;*/
-    weaponTimer = 0;
-    movementSpeed = 350;
+	active = true; 
+	/*weaponTimeOut = 2000;*/
+	weaponTimer = 0; 
+	movementSpeed = 350; 
 
-    reactToCollision = function (collidingObject) {
-        if (collidingObject.name == "Bunny") {
-            this.active = false;
+     reactToCollision = function (collidingObject) {
+        if(collidingObject.name == "Spider"){
+            this.active = false; 
         }
     }
 
@@ -28,44 +28,47 @@ class Weapon extends BaseGameObject {
         return bounds;
     }
 
-    update = function () {
+    update = function() {
         this.x += this.xVelocity * global.deltaTime;
         this.y += this.yVelocity * global.deltaTime;
 
-        if (this.active = true) {
-            this.weaponTimer += global.deltaTime;
-            if (this.weaponTimer > 1) {
-                this.active = false;
-                this.weaponTimer = 0;
-            }
+		if(this.active = true){
+			this.weaponTimer += global.deltaTime;
+			if(this.weaponTimer > 1){
+				this.active = false;
+				this.weaponTimer = 0;
+			}
 
 
 
-
-        }
-
+	/*if(this.active = true){
+		window.setTimeout(()=>{this.active = false;},this.weaponTimeOutTimeOut);
+	}*/
+			
+		}
+	
     }
 
-    /* draw = function () {
-         global.ctx.fillStyle = "#000000";
-         global.ctx.fillRect(this.x, this.y, this.width, this.height);
-     }*/
+   /* draw = function () {
+        global.ctx.fillStyle = "#000000";
+        global.ctx.fillRect(this.x, this.y, this.width, this.height);
+    }*/
 
-    constructor(x, y, width, height, moveRight) {
+    constructor(x, y, width, height,moveRight) {
         super(x, y, width, height);
         this.loadImages(["./images/weapon.png"]);
 
-        if (moveRight) {
-            this.xVelocity = this.movementSpeed;
-        }
-        else {
-            this.xVelocity = -this.movementSpeed;
-        }
-    }
+		if(moveRight){
+			this.xVelocity = this.movementSpeed;  
+    	}   
+		else{
+			this.xVelocity = -this.movementSpeed;
+		}
+	}
 
-    /*if(this.active = true){
-        window.setTimeout(()=>{this.active = false;},this.weaponTimeOutTimeOut);
-    }*/
+	/*if(this.active = true){
+		window.setTimeout(()=>{this.active = false;},this.weaponTimeOutTimeOut);
+	}*/
 }
 
 
@@ -77,4 +80,4 @@ class Weapon extends BaseGameObject {
 
 
 
-export { Weapon };
+export {Weapon};

@@ -17,7 +17,7 @@ class BaseGameObject {
     physicsData = {
         "fallVelocity": 0,
         "terminalVelocity": 53,
-        "jumpForce": 0,
+        "jumpForce": 0, 
         "prevFallingVelocity": 0,
         "jumpForceDecay": 2,
         "isGrounded": false
@@ -41,71 +41,72 @@ class BaseGameObject {
         let bounds = {
             left: this.x,
             right: this.x + this.width,
-            top: this.y,
+            top: this.y ,
             bottom: this.y + this.height
         }
         return bounds;
     };
 
-    update = function () {
+    update = function () { 
 
     };
 
     applyGravity = function () {
         if (!this.useGravityForces || !global.gameRunning)
             return;
-
+       
         this.physicsData.fallVelocity += global.gravityForce * global.deltaTime * global.pixelToMeter;
 
         if (this.physicsData.jumpForce > 0) {
             if (this.physicsData.isGrounded == true) {
-                this.physicsData.fallVelocity = 0;
+               this.physicsData.fallVelocity = 0;
             }
             this.physicsData.isGrounded = false;
-            this.physicsData.fallVelocity -= (global.gravityForce * global.deltaTime * global.pixelToMeter) * 2;
+            this.physicsData.fallVelocity -= (global.gravityForce * global.deltaTime * global.pixelToMeter)  * 2;
             this.physicsData.jumpForce -= this.physicsData.jumpForceDecay * global.deltaTime;
             this.physicsData.jumpForce = Math.max(0, this.physicsData.jumpForce);
             if (this.physicsData.fallVelocity > 0 || this.physicsData.jumpForce == 0) {
                 this.physicsData.jumpForce = 0;
             }
         }
-
+  
         if (this.physicsData.fallVelocity > this.physicsData.terminalVelocity * global.pixelToMeter) {
-            this.physicsData.fallVelocity = this.physicsData.terminalVelocity * global.pixelToMeter;
+            this.physicsData.fallVelocity = this.physicsData.terminalVelocity  * global.pixelToMeter;
         }
 
         this.y += (this.physicsData.fallVelocity * global.deltaTime + this.physicsData.prevFallingVelocity) / 2;
-        this.physicsData.prevFallingVelocity = this.physicsData.fallVelocity * global.deltaTime;
+        this.physicsData.prevFallingVelocity = this.physicsData.fallVelocity  * global.deltaTime;
 
         for (let i = 0; i < global.allGameObjects.length; i++) {
             let otherObject = global.allGameObjects[i];
             if (otherObject.active == true && otherObject.blockGravityForces == true) {
                 let collisionHappened = global.detectBoxCollision(this, otherObject);
-                if (collisionHappened && (this.name !== "Weapon" || this.name == "Weapon" && otherObject.name !== "Bunny")) {
-                    if (this.physicsData.fallVelocity > 0) {
-                        this.physicsData.isGrounded = true;
-                        this.y = otherObject.getBoxBounds().top - this.height - (this.getBoxBounds().bottom - (this.y + this.height)) - 0.1;
-                    }
-                    else if (this.physicsData.fallVelocity < 0) {
-                        this.y = otherObject.getBoxBounds().bottom + 0.1;
-
-                        if (otherObject.name === "Bubble" || otherObject.name === "Blocksi") {
-
-                            otherObject.checkObjectPop(this);
+                if (collisionHappened && (this.name !== "Weapon" || this.name == "Weapon" && otherObject.name !== "Spider")) {
+                        if (this.physicsData.fallVelocity > 0) {
+                            this.physicsData.isGrounded = true;
+                            this.y = otherObject.getBoxBounds().top - this.height - (this.getBoxBounds().bottom - (this.y + this.height)) - 0.1;
                         }
-                    }
+                        else if (this.physicsData.fallVelocity < 0) {
+                            this.y = otherObject.getBoxBounds().bottom + 0.1;
 
-                    this.physicsData.jumpForce = 0;
-                    this.physicsData.fallVelocity = 0;
-                    this.physicsData.prevFallingVelocity = 0;
+                            if (otherObject.name === "Bubble" || otherObject.name ==="Blocksi" ){
+                                
+                                otherObject.checkBubblePop(this);
+                            } 
+                        }
+                        
+                        this.physicsData.jumpForce = 0;
+                        this.physicsData.fallVelocity = 0;
+                        this.physicsData.prevFallingVelocity = 0; 
                 }
-            }
-        }
+            }   
+        }    
 
     };
 
     setJumpForce = function (jumpForce) {
-        if (this.physicsData.isGrounded == true) {
+        if (this.physicsData.isGrounded == true) 
+        {
             this.physicsData.jumpForce = jumpForce;
         }
     };
@@ -135,7 +136,7 @@ class BaseGameObject {
         for (let i = 0; i < imageSources.length; i++) {
             let image = new Image();
             image.src = imageSources[i];
-
+    
             /* after images have been loaded, they are added to an array that consists of each single sprite for our animation */
             this.animationData.animationSprites.push(image);
         }
@@ -147,14 +148,14 @@ class BaseGameObject {
         //const cols = Math.floor(spritesheetWidth / singleSpriteWidth);
         //const rows = Math.floor(spritesheetHeight / singleSpriteHeight);
         const totalSprites = cols * (rows - 1) + lastrow;
-
+    
         // Pre-create an array with Image objects for all sprites
         this.animationData.animationSprites = Array.from({ length: totalSprites }, () => new Image());
-
+    
         // Load the spritesheet
         const spritesheet = new Image();
         spritesheet.src = spritesheetPath;
-
+    
         // Add a "load" event listener to the spritesheet
         spritesheet.addEventListener("load", () => {
             const spritesheetWidth = spritesheet.width;
@@ -175,7 +176,7 @@ class BaseGameObject {
                     // if(row == rows - 1 && col == lastrow - 1) {
                     //     break;
                     // }
-
+                
                     // Clear the temporary canvas and draw the specific sprite region from the spritesheet
                     tempSpritesheetCtx.clearRect(0, 0, singleSpriteWidth, singleSpriteHeight);
                     tempSpritesheetCtx.drawImage(
@@ -189,7 +190,7 @@ class BaseGameObject {
                         singleSpriteWidth,
                         singleSpriteHeight
                     );
-
+    
                     // assign it to the corresponding Image object
                     const index = row * cols + col;
 
@@ -198,7 +199,7 @@ class BaseGameObject {
             }
         });
 
-
+        
     }
 
     switchCurrentSprites = function (firstSpriteIndex, lastSpriteIndex) {
@@ -207,7 +208,7 @@ class BaseGameObject {
         this.animationData.lastSpriteIndex = lastSpriteIndex;
     }
 
-    reactToCollision = function (collidingObject) {
+    reactToCollision = function(collidingObject) {
 
     }
 
@@ -226,4 +227,4 @@ class BaseGameObject {
 
 
 
-export { BaseGameObject }
+export {BaseGameObject}

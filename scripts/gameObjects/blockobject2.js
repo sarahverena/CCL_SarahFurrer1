@@ -5,34 +5,34 @@ import { global } from "../modules/global.js";
 class BlockObject2 extends BaseGameObject {
     name = "Blocksi";
     blockGravityForces = true;
-    containsThread = false;
+    containsHeart = false; 
 
-    ContainsThread = function (collidingObject) {
-        if (collidingObject.name == "Thread") {
-            this.containsThread = true;
+    ContainsHeart = function(collidingObject){
+        if(collidingObject.name == "Heart"){
+            this.containsHeart = true;
         }
     }
 
-    checkObjectPop = function (player) {
-        if (this.containsThread && player.physicsData.fallVelocity < 0) {
-
-            this.active = false;
-
+    checkBubblePop = function(player) {
+        if (this.containsHeart && player.physicsData.fallVelocity < 0) {
+            
+            this.active = false; 
+            
         }
     };
 
-    reactToCollision = function (collidingObject) {
-        this.ContainsThread(collidingObject);
-        if (collidingObject.name == "Designer") {
+    reactToCollision = function (collidingObject)   {
+        this.ContainsHeart(collidingObject);
+        if (collidingObject.name == "Skeleton") {
             collidingObject.x = collidingObject.previousX;
             collidingObject.y = collidingObject.previousY;
         }
     }
 
-    constructor(x, y, width, height) {
+    constructor (x, y, width, height) {
         super(x, y, width, height);
         this.loadImages(["./images/blocksi.png"]);
     }
 }
 
-export { BlockObject2 };
+export {BlockObject2};

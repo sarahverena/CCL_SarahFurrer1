@@ -9,12 +9,12 @@ class Floor extends BaseGameObject {
 
 
     draw = function () {
-        /*global.ctx.fillRect(this.x, this.y, this.width, this.height);*/
+       /*global.ctx.fillRect(this.x, this.y, this.width, this.height);*/
     }
-
-    constructor(x, y, width, height) {
+    
+    constructor (x, y, width, height) {
         super(x, y, width, height);
     }
 }
 
-export { Floor };
+export {Floor};

@@ -6,15 +6,15 @@ class MoveTrigger extends BaseGameObject {
 
     update = function () {
         this.backGroundDiv.style.backgroundPositionX = global.backgroundShift + "px";
-        global.canvas.style.marginLeft = global.backgroundShift + "px";
+        global.canvas.style.marginLeft =  global.backgroundShift  + "px";
     }
 
     draw = function () {
-        /*global.ctx.fillRect(this.x, this.y, this.width, this.height);*/
+       /*global.ctx.fillRect(this.x, this.y, this.width, this.height);*/
     }
 
-    reactToCollision = function (collidingObject) {
-        if (collidingObject.name == "Designer") {
+    reactToCollision = function (collidingObject)   {
+        if (collidingObject.name == "Skeleton") {
             let shiftBy = collidingObject.xVelocity * global.deltaTime;
             global.backgroundShift += shiftBy * -1;
 
@@ -41,4 +41,4 @@ class MoveTrigger extends BaseGameObject {
     }
 }
 
-export { MoveTrigger }
+export {MoveTrigger}

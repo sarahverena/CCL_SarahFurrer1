@@ -7,26 +7,26 @@ import { djMusic } from "../modules/sound.js";
 class Portal extends BaseGameObject {
     blockGravityForces = false;
 
-    reactToCollision = function (collidingObject) {
-        /* if (collidingObject.name == "Designer") {
-             displayGameOverScreen();
-         }*/
-        if (collidingObject.name == "Designer" && global.currentItems >= 4) {
-            global.currentLevel++;
+    reactToCollision = function (collidingObject)   {
+       /* if (collidingObject.name == "Skeleton") {
+            displayGameOverScreen();
+        }*/
+		if(collidingObject.name == "Skeleton" && global.currentItems >= 4){
+	        global.currentLevel++;
             djMusic.play();
-            if (global.currentLevel == 1) {
+            if(global.currentLevel == 1){
                 setupGame1();
             }
-            else if (global.currentLevel == 2) {
+            else if(global.currentLevel == 2){
                 displayWinScreen();
-
+            
             }
         }
     }
 
     getBoxBounds = function () {
         let bounds = {
-            left: this.x + 105,
+            left: this.x +105,
             right: this.x + this.width - 22,
             top: this.y + 80,
             bottom: this.y + this.height - 3
@@ -34,10 +34,10 @@ class Portal extends BaseGameObject {
         return bounds;
     }
 
-    constructor(x, y, width, height) {
+    constructor (x, y, width, height) {
         super(x, y, width, height);
         this.loadImages(["./images/portal2.png"]);
     }
 }
 
-export { Portal };
+export {Portal};

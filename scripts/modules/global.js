@@ -1,7 +1,7 @@
 const global = {};
 
 function resetGlobals() {
-
+    
     global.canvas = document.querySelector("#canvas");
     global.ctx = canvas.getContext("2d");
     global.deltaTime = 0;
@@ -16,15 +16,15 @@ function resetGlobals() {
     global.gameRunning = true;
     global.currentItems = 0;
 }
-global.currentLevel = 0;
+global.currentLevel = 0; 
 global.prevTotalRunningTime = 0;
 
 
 global.getCanvasBounds = function () {
-    let bounds = {
+    let bounds =  {
         "left": 0,
         "right": this.canvas.width,
-        "top": 0,
+        "top": 0, 
         "bottom": this.canvas.height
     }
 
@@ -58,10 +58,11 @@ global.detectBoxCollision = function (gameObject1, gameObject2) {
         console.log(box1);
     }
     if (gameObject1 != gameObject2) {
-        if (box1.top <= box2.bottom &&
-            box1.left <= box2.right &&
+        if (box1.top <= box2.bottom && 
+            box1.left <= box2.right && 
             box1.bottom >= box2.top &&
-            box1.right >= box2.left) {
+            box1.right >= box2.left)
+        {
             return true;
         }
     }

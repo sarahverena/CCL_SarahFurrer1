@@ -10,10 +10,10 @@ class Ceiling extends BaseGameObject {
 
     draw = function () {
     }
-
-    constructor(x, y, width, height) {
+    
+    constructor (x, y, width, height) {
         super(x, y, width, height);
     }
 }
 
-export { Ceiling };
+export {Ceiling};
