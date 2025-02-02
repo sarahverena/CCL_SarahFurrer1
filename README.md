@@ -6,7 +6,7 @@ Armed with the Magical String, players will be enabled to take part in fast-pace
 ---
 
 ## 🌐 **Play the Game**
-[Click here to play the game!](https://your-github-username.github.io/repository-name)
+[Click here to play the game!](https://sarahverena.github.io/CCL_SarahFurrer1/)
 
 ---
 
