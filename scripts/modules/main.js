@@ -121,7 +121,7 @@ function setupGame() {
     let gameOverScreen = document.getElementById("gameOverScreen");
     gameOverScreen.style.display = "none";
 
-    document.getElementById("background").style.backgroundImage = "url(../images/universe.jpg)";
+    document.getElementById("background").style.backgroundImage = "url(./images/universe.jpg)";
 
     let winScreen = document.getElementById("winScreen");
     winScreen.style.display = "none";
@@ -187,7 +187,7 @@ function setupGame() {
 }
 
 function setupGame1() {
-    document.getElementById("background").style.backgroundImage = "url(../images/wolkenbackground.png)";
+    document.getElementById("background").style.backgroundImage = "url(./images/wolkenbackground.png)";
     let gameOverScreen = document.getElementById("gameOverScreen");
     gameOverScreen.style.display = "none";
     backgroundMusic.pause();

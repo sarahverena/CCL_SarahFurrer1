@@ -75,7 +75,7 @@ class Skeleton extends BaseGameObject {
     constructor(x, y, width, height) {
         super(x, y, width, height);
         //this.loadImages(["./images/apple.png"]);
-        this.loadImagesFromSpritesheet("../../images/player original fixed.png", 9, 2, 9);
+        this.loadImagesFromSpritesheet("./images/player original fixed.png", 9, 2, 9);
         this.switchCurrentSprites(0,0);
         this.updateHealthDisplay();
         document.getElementById("score-display").innerHTML = "Items:" + global.currentItems + "/5";
