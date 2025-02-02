@@ -15,8 +15,8 @@ Armed with the Magical String, players will be enabled to take part in fast-pace
 ### Main Gameplay:
 <div style="text-align: center;">
 <<<<<<< HEAD
-  <img src="gameplay1.jpeg" alt="Gameplay Screenshot" width="600">
-   <img src="gameplay2.jpeg" alt="Gameplay Screenshot" width="600">
+  <img src="images/gameplay1.jpeg" alt="Gameplay Screenshot" width="600">
+   <img src="images/gameplay2.jpeg" alt="Gameplay Screenshot" width="600">
 =======
   <img src="gameplay1.png" alt="Gameplay Screenshot" width="600">
     <img src="gameplay2.png" alt="Gameplay Screenshot" width="600">
@@ -26,10 +26,12 @@ Armed with the Magical String, players will be enabled to take part in fast-pace
 
 ---
 
-### Menu and UI:
+### Screens:
 <div style="text-align: center;">
-  <img src="menu.png" alt="Menu UI Screenshot" width="600">
-  <p>*Figure 2: Menu and user interface.*</p>
+  <img src="images/gamerover.png" alt="Menu UI Screenshot" width="600">
+  <img src="images/startingscreen.png" alt="Menu UI Screenshot" width="600">
+  <img src="images/winnerscreen.png" alt="Menu UI Screenshot" width="600">
+  
 </div>
 
 ---
@@ -39,7 +41,7 @@ Below are the sprites used to create characters and objects in the game:
 
 ### Player Character:
 <div style="text-align: center;">
-  <img src="playersheet.png" alt="Player Spritesheet" width="500">
+  <img src="images/player original fixed.png" alt="Player Spritesheet" width="500">
   <p>*Figure 3: Player character animations.*</p>
 </div>
 
@@ -47,7 +49,7 @@ Below are the sprites used to create characters and objects in the game:
 
 ### Enemies and NPCs:
 <div style="text-align: center;">
-  <img src="enemysheet.png" alt="Enemy Spritesheet" width="500">
+  <img src="images/enemy2.png" alt="Enemy Spritesheet" width="500">
   <p>*Figure 4: Enemy animations.*</p>
 </div>
 
@@ -56,13 +58,13 @@ Below are the sprites used to create characters and objects in the game:
 ## ✍️ **Reflection**
 
 ### What went well:
-- **Creative Design:** The theme and style came together seamlessly, and the sprites were fun to design.
-- **Core Mechanics:** The gravity-based gameplay worked better than expected and provided a unique challenge.
+- **Creative Design:** I really liked everything that I designedm, although it was really hard to paint all the spritesheets
+- **Core Mechanics:** It was pretty okay to implement the gravity and everything based on Lukas template. But all in one, things like shooting a weapon realistically, is way easier to do in our heads than in coding.
 
 ### Challenges:
-- **Time Constraints:** Implementing all the features we envisioned wasn’t possible due to the limited timeframe.
-- **Bug Fixes:** Handling collisions and edge cases for gravity mechanics was tricky.
+- **Debugging** after chnaging one little thing, there is a high chance that everything suddenly doesnt work anymore
+- **Spritesheets:** making the spritesheet realistically and look good was way harder than expected
 
 ### Lessons Learned:
-- **Prototyping Matters:** Testing early prototypes helped refine the core mechanics quickly.
-- **Keep it Simple:** Focusing on one unique mechanic instead of multiple features made the game more polished.
+- **Trust the process** Progress takes time, and setbacks are part of growth, even in developing a game. At the end of the day every step you take, gets you closer to your goal. Even if you dont see all the progress, at the end it will be worth it
+- **Quality over Quantity** Focusing on one unique mechanic instead of multiple features made the game more polished.
