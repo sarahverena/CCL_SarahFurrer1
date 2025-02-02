@@ -16,7 +16,7 @@ Armed with the Magical String, players will be enabled to take part in fast-pace
 <div style="text-align: center;">
   <img src="images/gameplay1.jpeg" alt="Gameplay Screenshot" width="600">
   <img src="images/gameplay2.jpeg" alt="Gameplay Screenshot" width="600">
-  <p>*Figure 1: Example of gameplay in action.*</p>
+  <p> Example of gameplay in action.*</p>
 </div>
 
 ---
