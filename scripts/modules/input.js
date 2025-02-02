@@ -6,7 +6,7 @@ import { global } from "./global.js";
 
 
 function move(event) {
-    console.log(global.playerObject.TurningRight, global.playerObject.xVelocity);
+    
     //Example Movement for the PacMan Game
     switch(event.key) {
         case "d":
@@ -16,7 +16,7 @@ function move(event) {
             global.playerObject.xVelocity = 200;
             global.playerObject.yVelocity = 0;
             global.playerObject.TurningRight = true;
-            console.log("velocity set");
+           
             break;
         case "a":   
             if (global.playerObject.TurningRight == true || global.playerObject.xVelocity == 0)

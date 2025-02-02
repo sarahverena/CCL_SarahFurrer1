@@ -129,7 +129,7 @@ function setupGame() {
     backgroundMusic.loop = true; 
     backgroundMusic.play();
     resetGlobals();
-    console.log('seas ' + global.allGameObjects.length);
+    ('seas ' + global.allGameObjects.length);
 
 
     global.playerObject = new Skeleton(0, 400, 100, 100);
@@ -293,7 +293,7 @@ function setupGame1() {
 
 //setupGame();
 
-console.log(gameLoop);
+
 
 export { setupGame, displayGameOverScreen, setupGame1, displayWinScreen, displayStoryScreen };
 

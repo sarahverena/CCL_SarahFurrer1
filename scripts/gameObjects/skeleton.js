@@ -45,7 +45,7 @@ class Skeleton extends BaseGameObject {
         this.y += this.yVelocity * global.deltaTime;
 
         if(this.tookDamageInLast5Seconds){
-            console.log('current opacity: ' + this.currentOpacity + ' - changevalue: ' + this.currentOpacityChangingValue);
+            
             this.currentOpacity += this.currentOpacityChangingValue            
 
             if( this.currentOpacity <= 0.05){
@@ -66,7 +66,7 @@ class Skeleton extends BaseGameObject {
    
     draw = function () {
         let sprite = this.getNextSprite();
-        console.log('Drawing with opacity: ' + this.currentOpacity)
+      
         global.ctx.globalAlpha = this.currentOpacity;
         global.ctx.drawImage(sprite, this.x, this.y, this.width, this.height);
         global.ctx.globalAlpha = 1;

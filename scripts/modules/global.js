@@ -38,10 +38,10 @@ global.checkCollisionWithAnyOther = function (givenObject) {
             let collisionHappened = this.detectBoxCollision(givenObject, otherObject);
             if (collisionHappened) {
                 if (givenObject.name == "Weapon" && givenObject.active) {
-                    console.log("test1");
+                   
                 }
                 if (givenObject.name == "Weapon") {
-                    console.log("test");
+                    
                 }
                 givenObject.reactToCollision(otherObject);
                 otherObject.reactToCollision(givenObject);
@@ -55,7 +55,7 @@ global.detectBoxCollision = function (gameObject1, gameObject2) {
     let box1 = gameObject1.getBoxBounds();
     let box2 = gameObject2.getBoxBounds();
     if (gameObject1.name == "Weapon") {
-        console.log(box1);
+       
     }
     if (gameObject1 != gameObject2) {
         if (box1.top <= box2.bottom && 
