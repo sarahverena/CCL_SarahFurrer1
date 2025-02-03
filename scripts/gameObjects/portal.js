@@ -8,10 +8,10 @@ class Portal extends BaseGameObject {
     blockGravityForces = false;
 
     reactToCollision = function (collidingObject)   {
-       /* if (collidingObject.name == "Skeleton") {
+       /* if (collidingObject.name == "Designer") {
             displayGameOverScreen();
         }*/
-		if(collidingObject.name == "Skeleton" && global.currentItems >= 4){
+		if(collidingObject.name == "Designer" && global.currentItems >= 4){
 	        global.currentLevel++;
             djMusic.play();
             if(global.currentLevel == 1){

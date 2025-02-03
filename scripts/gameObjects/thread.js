@@ -1,14 +1,14 @@
 import { BaseGameObject } from "./baseGameObject.js";
 import { global } from "../modules/global.js";
 
-class Heart extends BaseGameObject {
-    name = "Heart";
+class Thread extends BaseGameObject {
+    name = "Thread";
     xVelocity = 0;
     yVelocity = 0;
     useGravityForces = false;
 
     reactToCollision = function (collidingObject) {
-        if (collidingObject.name == "Skeleton") {
+        if (collidingObject.name == "Designer") {
             this.active = false;
         }
     }
@@ -43,4 +43,4 @@ class Heart extends BaseGameObject {
 
 }
 
-export {Heart}
+export {Thread}

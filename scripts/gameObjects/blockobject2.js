@@ -5,16 +5,16 @@ import { global } from "../modules/global.js";
 class BlockObject2 extends BaseGameObject {
     name = "Blocksi";
     blockGravityForces = true;
-    containsHeart = false; 
+    containsThread = false; 
 
-    ContainsHeart = function(collidingObject){
-        if(collidingObject.name == "Heart"){
-            this.containsHeart = true;
+    ContainsThread = function(collidingObject){
+        if(collidingObject.name == "Thread"){
+            this.containsThread = true;
         }
     }
 
     checkBubblePop = function(player) {
-        if (this.containsHeart && player.physicsData.fallVelocity < 0) {
+        if (this.containsThread && player.physicsData.fallVelocity < 0) {
             
             this.active = false; 
             
@@ -22,8 +22,8 @@ class BlockObject2 extends BaseGameObject {
     };
 
     reactToCollision = function (collidingObject)   {
-        this.ContainsHeart(collidingObject);
-        if (collidingObject.name == "Skeleton") {
+        this.ContainsThread(collidingObject);
+        if (collidingObject.name == "Designer") {
             collidingObject.x = collidingObject.previousX;
             collidingObject.y = collidingObject.previousY;
         }

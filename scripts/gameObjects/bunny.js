@@ -1,8 +1,8 @@
 import { BaseGameObject } from "./baseGameObject.js";
 import { global } from "../modules/global.js";
 
-class Spider extends BaseGameObject {
-    name = "Spider";
+class Bunny extends BaseGameObject {
+    name = "Bunny";
     xVelocity = 50;
     yVelocity = 0;
     useGravityForces = true;
@@ -50,7 +50,7 @@ class Spider extends BaseGameObject {
 	reactToCollision = function(collidingObject){
     
 
-        if(collidingObject.name == "Skeleton"){
+        if(collidingObject.name == "Designer"){
             this.x = this.previousX;
             this.y = this.previousY;
 
@@ -77,4 +77,4 @@ class Spider extends BaseGameObject {
     }
 }
 
-export {Spider};
+export {Bunny};

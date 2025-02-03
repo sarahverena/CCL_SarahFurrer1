@@ -1,10 +1,10 @@
 import { global, resetGlobals } from "./global.js";
-import { Skeleton } from "../gameObjects/skeleton.js";
+import { Designer } from "../gameObjects/designer.js";
 import { MoveTrigger } from "../gameObjects/moveTrigger.js";
 import { BlockObject } from "../gameObjects/blockObject.js";
 import { Floor } from "../gameObjects/floor.js";
-import { Spider } from "../gameObjects/spider.js";
-import { Heart } from "../gameObjects/heart.js";
+import { Bunny } from "../gameObjects/bunny.js";
+import { Thread } from "../gameObjects/thread.js";
 import { Portal } from "../gameObjects/portal.js";
 import { Ceiling } from "../gameObjects/ceiling.js";
 import { FallTrigger } from "../gameObjects/fallTrigger.js";
@@ -132,7 +132,7 @@ function setupGame() {
     ('seas ' + global.allGameObjects.length);
 
 
-    global.playerObject = new Skeleton(0, 400, 100, 100);
+    global.playerObject = new Designer(0, 400, 100, 100);
     global.leftMoveTrigger = new MoveTrigger(-10, 0, 20, 900, 100);
     global.rightMoveTrigger = new MoveTrigger(800, 0, 20, 900, -100);
     new Floor(0, 400, 9000, 40);
@@ -161,15 +161,15 @@ function setupGame() {
 
     //others
     new Portal(1680, 265, 200, 200);
-    new Spider(550, 200, 80, 80);
-    new Heart(600, 200, 50, 50);
-    new Heart(530, 200, 50, 50);
-    new Heart(250, 150, 50, 50);
-    new Heart(410, 200, 50, 50);
-    new Heart(950, 150, 50, 50);
-    new Spider(900, 200, 80, 80);
-    new Spider(1500, 400, 80, 80);
-    new Spider(1600, 400, 80, 80);
+    new Bunny(550, 200, 80, 80);
+    new Thread(600, 200, 50, 50);
+    new Thread(530, 200, 50, 50);
+    new Thread(250, 150, 50, 50);
+    new Thread(410, 200, 50, 50);
+    new Thread(950, 150, 50, 50);
+    new Bunny(900, 200, 80, 80);
+    new Bunny(1500, 400, 80, 80);
+    new Bunny(1600, 400, 80, 80);
 
 
     // global.weapon = new Weapon(global.playerObject.x + 30, global.playerObject.y, 40, 40);
@@ -197,7 +197,7 @@ function setupGame1() {
 
 
 
-    global.playerObject = new Skeleton(0, 400, 100, 100);
+    global.playerObject = new Designer(0, 400, 100, 100);
     global.leftMoveTrigger = new MoveTrigger(-10, 0, 20, 900, 100);
     global.fallTrigger = new FallTrigger(0, 700, 9000, 40);
     global.rightMoveTrigger = new MoveTrigger(800, 0, 20, 900, -100);
@@ -243,8 +243,8 @@ function setupGame1() {
 
 
     
-    new Spider(1300, 250, 80, 80);
-    new Heart(1380, 250, 50, 50)
+    new Bunny(1300, 250, 80, 80);
+    new Thread(1380, 250, 50, 50)
    
     
     //objekte mittig
@@ -265,16 +265,16 @@ function setupGame1() {
     
     //others
     new Portal(1670, 250, 150, 150);
-    new Spider(550, 200, 80, 80);
-    new Heart(600, 200, 50, 50);
-    new Heart(530, 200, 50, 50);
-    new Heart(250, 150, 50, 50);
+    new Bunny(550, 200, 80, 80);
+    new Thread(600, 200, 50, 50);
+    new Thread(530, 200, 50, 50);
+    new Thread(250, 150, 50, 50);
     
-    new Heart(950, 150, 50, 50);
-    new Spider(900, 200, 80, 80);
-    new Spider(1500, 400, 80, 80);
-    new Spider(1600, 400, 80, 80);
-    new Heart(550, 400, 50, 50);
+    new Thread(950, 150, 50, 50);
+    new Bunny(900, 200, 80, 80);
+    new Bunny(1500, 400, 80, 80);
+    new Bunny(1600, 400, 80, 80);
+    new Thread(550, 400, 50, 50);
     
     // global.weapon = new Weapon(global.playerObject.x + 30, global.playerObject.y, 40, 40);
     // global.weapon = new Weapon(100, 300, 70, 70); 

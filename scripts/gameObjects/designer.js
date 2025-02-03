@@ -1,13 +1,13 @@
 import { BaseGameObject } from "./baseGameObject.js";
 import { global } from "../modules/global.js";
-import { Heart } from "./heart.js";
+import { Thread } from "./thread.js";
 import { displayGameOverScreen } from "../modules/main.js";
 import { Weapon} from "./weapon.js";
 
 
 
-class Skeleton extends BaseGameObject {
-    name = "Skeleton";
+class Designer extends BaseGameObject {
+    name = "Designer";
     xVelocity = 0;
     yVelocity = 0;
     useGravityForces = true;
@@ -88,20 +88,20 @@ class Skeleton extends BaseGameObject {
        let healthContainer = document.getElementById("health-bar");
         healthContainer.innerHTML = "";
         for (let i = 0; i < this.currentHealth; i++){
-            let heart = document.createElement("img");
-            heart.src = "./images/starsi.png";
-            heart.classList.add("heart");
-            healthContainer.appendChild(heart);
+            let star = document.createElement("img");
+            star.src = "./images/starsi.png";
+            star.classList.add("star");
+            healthContainer.appendChild(star);
         }
         this.tookDamageInLast5Seconds = false;
     } 
 
     reactToCollision = function(collidingObject){
-        if(collidingObject.name == "Heart"){
+        if(collidingObject.name == "Thread"){
             global.currentItems++;
             document.getElementById("score-display").innerHTML = "Items:" + global.currentItems + "/5";
         }
-        if(collidingObject.name == "Spider"){
+        if(collidingObject.name == "Bunny"){
             if(this.canTakeDamage){
             this.takeDamage();
 
@@ -180,4 +180,4 @@ class Skeleton extends BaseGameObject {
 
 
 
-export {Skeleton};
+export {Designer};

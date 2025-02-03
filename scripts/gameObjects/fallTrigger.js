@@ -11,7 +11,7 @@ class FallTrigger extends BaseGameObject {
     }
 
     reactToCollision = function (collidingObject)   {
-        if (collidingObject.name == "Skeleton") {
+        if (collidingObject.name == "Designer") {
 			setupGame()
 			global.currentLevel--;
 			background2.pause()
