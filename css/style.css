@@ -16,8 +16,8 @@ body {
 #gameContainer {
     overflow: hidden;
     position: relative;
-    width: 1000px; /* change according to your game */
-    height: 500px; /* change according to your game */
+    width: 1000px; 
+    height: 500px; 
 }
 
 #canvas {
@@ -34,14 +34,13 @@ body {
     top: 0;
     width: 1000px; 
     height: 500px;
-    /*background-image: url("../images/background.jpg");*/
-   /* background-image: url("../images/universe.jpg");*/
+    
 
     background-size: cover;
     z-index: 0;
 
 }
-/* add styles for other HTML elements of your game */
+
 
 #health-bar {
     display: flex;
@@ -59,17 +58,11 @@ body {
 }
 
 .hidden{
-    display: none; /* Hide hearts when losing health */
+    display: none; 
 }
 
 #score-display {
-    /*position: fixed;
-    top: 20px;
-    right: 20px;
-    font-size: 24px;
-    font-family: Arial, sans-serif;
-    color: #000;
-    z-index: 20;*/
+
     display: flex;
     gap: 5px;
     position: absolute;
@@ -90,9 +83,9 @@ body {
     width: 1000px; 
     height: 500px;
     background-image: url("../images/gamerover.png");
-    background-size: cover; /* Bild füllt den gesamten Container aus */
-    background-repeat: no-repeat; /* Wiederholung vermeiden */
-    background-position: top center; /* Bild wird nach oben ausgerichtet */
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: top center; 
 
 }
 
@@ -115,17 +108,17 @@ body {
     justify-content: center;
     z-index: 30;
     width: 1000px; 
-    height: 500px; /* Containerhöhe */
+    height: 500px; 
     background-image: url("../images/winnerscreen.png");
-    background-size: cover; /* Bild füllt den gesamten Container aus */
-    background-repeat: no-repeat; /* Wiederholung vermeiden */
-    background-position: top center; /* Bild wird nach oben ausgerichtet */
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: top center; 
 }
 
 #winScreenButton {
     position: absolute;
-    bottom: 160px; /* Abstand vom unteren Rand */
-    right: 275px; /* Abstand vom rechten Rand */
+    bottom: 160px; 
+    right: 275px; 
     cursor: pointer;
     border-radius: 8px;
     padding: 15px 30px;
