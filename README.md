@@ -1,4 +1,4 @@
-# 🎮 **Game Title** 
+# 🎮 The Magical String of Love
 
 > **Short Pitch**: My game is a 2D jump-and-run platformer where the player has to defeat enemies, collect items, and reach a portal in order to progress to the next level. The player assumes the role of a former fashion designer who now seeks to bring balance back to a fractured multiverse after the Magical String of Love was shattered.
 
